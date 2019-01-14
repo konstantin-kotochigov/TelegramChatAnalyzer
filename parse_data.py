@@ -39,4 +39,6 @@ df.sort_values(by="id", inplace=True)
 df.from_name[df.from_name==""] = None 
 df['from_name'] = df.from_name.ffill()
 
+df = df[df.text != ""]
+
 df.to_csv(filesdir+"/df.csv", sep=";")
